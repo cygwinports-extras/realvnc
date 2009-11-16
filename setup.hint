@@ -1,0 +1,7 @@
+category: Net
+requires: libgcc1 libstdc++6 libX11_6 libXext6
+sdesc: "RealVNC viewer"
+ldesc: "VNC (an abbreviation for Virtual Network Computing) is a great 
+client/server software package allowing remote network access to 
+graphical desktops. With VNC, you can access your machine from 
+everywhere provided that your machine is connected to the Internet."

@@ -1,0 +1,53 @@
+realvnc
+------------------------------------------
+VNC (an abbreviation for Virtual Network Computing) is a great
+client/server software package allowing remote network access to
+graphical desktops. With VNC, you can access your machine from
+everywhere provided that your machine is connected to the Internet.
+
+Runtime requirements:
+  cygwin-1.7.0-62
+  libgcc1-4.3.4-1
+  libstdc++6-4.3.4-1
+  libX11_6-1.3.2-1
+  libXext6-1.1.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf2.5-2.63-10
+  automake1.10-1.10.2-10
+  binutils-2.19.51-1
+  cygport-0.9.10-1
+  gawk-3.1.7-1
+  gcc4-core-4.3.4-1
+  gcc4-g++-4.3.4-1
+  libtool-2.2.7a-14
+  make-3.81-2
+  sed-4.1.5-2
+
+Canonical website:
+  http://www.realvnc.com/
+
+-------------------------------------------
+
+Build instructions:
+  unpack realvnc-4.1.3-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./realvnc-4.1.3-X.cygport all
+
+This will create:
+  /usr/src/realvnc-4.1.3-X-src.tar.bz2
+  /usr/src/realvnc-4.1.3-X.tar.bz2
+
+-------------------------------------------
+
+Port Notes:
+
+----- version 4.1.3-1 -----
+Initial release for Cygwin 1.7.
+
+
+Cygwin port maintained by:
+http://sourceware.org/cygwinports/

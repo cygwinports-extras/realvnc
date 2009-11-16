@@ -1,0 +1,32 @@
+DESCRIPTION="RealVNC viewer"
+HOMEPAGE="http://www.realvnc.com/"
+SRC_URI="mirror://gentoo/vnc-${PV//./_}-unixsrc.tar.gz
+         mirror://portage/net-misc/vnc/files/vncviewer.png"
+SRC_DIR="vnc-${PV//./_}-unixsrc"
+PATCH_URI="4.1.3-includes.patch"
+
+DIFF_EXCLUDES="configure"
+
+src_compile() {
+	cd ${S}/common
+	cygautoreconf
+
+	cd ${S}/unix
+	cygautoreconf
+
+	lndirs
+	cd ${B}/unix
+	CYGCONF_SOURCE=.
+	cygconf
+	cygmake
+}
+
+src_install() {
+	cd ${B}/unix
+	newbin vncviewer/vncviewer.exe realvncviewer.exe
+	newman vncviewer/vncviewer.man realvncviewer.1
+	dodoc README
+
+	newicon ${S}/vncviewer.png realvnc.png
+	make_desktop_entry realvncviewer "RealVNC Viewer" realvnc "Network;RemoteAccess"
+}
